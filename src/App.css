@@ -1,3 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Yeon+Sung&display=swap");
+
+body {
+  background-color: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Gamja Flower";
+  min-height: 100vh;
+  /* vh = ViewportHight 실제크기의 100%를 최소크기로 가지겠다*/
+  margin: 0;
+}
+
+/* 650이상일때 */
+@media (min-width: 650px) {
+  .App {
+    width: 640px;
+  }
+}
+/* 650미만일때 */
+@media (max-width: 650px) {
+  .App {
+    width: 90vw;
+  }
+}
+
+#root {
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2);
+}
+
 .App {
-  padding: 20px;
+  padding: 0 20px;
+  min-height: 100vh;
+}
+
+/* MyButton */
+.MyButton {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  /* 버튼안에 글자가 짤려서 두줄이 되지않게만드는 속성 */
+  white-space: nowrap;
+  font-family: "Gamja Flower";
+}
+
+.MyButton_default {
+  background-color: #ececec;
+  color: black;
+}
+
+.MyButton_positive {
+  background-color: #64c964;
+  color: white;
+}
+
+.MyButton_negative {
+  background-color: #fd565f;
+  color: white;
+}
+
+/* Header */
+header {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+header > div {
+  display: flex;
+}
+
+header .head_text {
+  width: 50%;
+  font-size: 25px;
+  justify-content: center;
+}
+
+header .head_btn_left {
+  width: 25%;
+  justify-content: start;
+}
+
+header .head_btn_right {
+  width: 25%;
+  justify-content: end;
+}
+
+header button {
+  font-family: "Gamja Flower";
 }

@@ -1,4 +1,8 @@
+import { useParams } from "react-router-dom";
+
 const Diary = () => {
+  const { id } = useParams(); //App.js에서 id로 줬기때문에 id로 받아들여야함
+  console.log(id);
   return (
     <div>
       <h1>Diary</h1>
