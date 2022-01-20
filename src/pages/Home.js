@@ -33,9 +33,9 @@ const Home = () => {
   }, [diaryList, curDate]);
 
   //일기뽑아내는 테스트
-  useEffect(() => {
-    console.log(data);
-  }, [data]); //
+  // useEffect(() => {
+  //   console.log(data);
+  // }, [data]); //
 
   const increaseMonth = () => {
     setCurDate(
