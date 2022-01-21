@@ -11,6 +11,11 @@ const Home = () => {
   const [curDate, setCurDate] = useState(new Date());
   const headText = `${curDate.getFullYear()}년 ${curDate.getMonth() + 1}월`;
 
+  useEffect(() => {
+    const titleElement = document.getElementsByTagName("title")[0];
+    titleElement.innerHTML = `감정 일기장`;
+  });
+
   //이번년도 이번월에 해당하는 일기 뽑아내기
   useEffect(() => {
     //diaryList에 빈값이면 작업할 필요없기때문에 조건 걸어줌
@@ -23,7 +28,10 @@ const Home = () => {
       const lastDay = new Date(
         curDate.getFullYear(),
         curDate.getMonth() + 1,
-        0
+        0,
+        23,
+        59,
+        59
       ).getTime();
 
       setData(

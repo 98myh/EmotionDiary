@@ -1,5 +1,5 @@
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react/cjs/react.development";
 import DiaryItem from "./DiaryItem";
 import MyButton from "./MyButton";
 
@@ -15,7 +15,7 @@ const filterOptionList = [
 ];
 
 //최신순 오래된순
-const ControlMenu = ({ value, onChange, optionList }) => {
+const ControlMenu = React.memo(({ value, onChange, optionList }) => {
   //value : 현재값 , onChange : 필터를 바꾸는 함수 , optionList : filterOptionList
   return (
     <select
@@ -30,22 +30,16 @@ const ControlMenu = ({ value, onChange, optionList }) => {
       ))}
     </select>
   );
-};
+});
 
 const DiaryList = ({ diaryList }) => {
   const navigate = useNavigate();
-  const [sortType, setSortType] = useState("lastest");
+  const [sortType, setSortType] = useState("latest");
   const [filter, setFilter] = useState("all");
 
   //다이어리 최신순 오래된순 정렬 작업
   const getProcessedDiaryList = () => {
-    //diaryList.sort 를 쓰면 원본 배열 자체가 정렬이 되어버리기때문에 사용x
-    //깊은 복사를 통해 데이터를 붙여넣을꺼다
-
     const copyList = JSON.parse(JSON.stringify(diaryList));
-    //diaryList를 JSON화를 시켜서 문자(stringify)로 바꿔버리고
-    //문자열로 바뀐것을 parse시키면 다시 배열로 복구화 시켜서 copyList에 넣어줌
-
     //날짜 비교
     const compare = (a, b) => {
       if (sortType === "latest") {
