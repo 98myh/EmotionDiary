@@ -10,4 +10,4 @@
 <br/> 
 <br/> 
 ### -일기작성화면
-![image](https://user-images.githubusercontent.com/90823418/175884282-2fe52bd1-ed7b-49ba-9595-afb73446ce9e.png)
+![image](https://user-images.githubusercontent.com/90823418/175884282-2fe52bd1-ed7b-49ba-9595-afb73446ce9e.png) 
